@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    @apply text-6xl;
+}
+h2 {
+    @apply text-3xl;
+}

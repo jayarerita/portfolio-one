@@ -10,7 +10,7 @@ const data = [
 ];
 
 const Section = styled.div.attrs({
-  className:"h-screen snap-center flex justify-center"
+  className:"h-screen snap-center flex justify-center w-10/12 mx-auto"
 })``;
 
 const Container = styled.div.attrs({
@@ -18,7 +18,7 @@ const Container = styled.div.attrs({
 })``;
 
 const Left = styled.div.attrs({
-  className:"w-1/2 flex items-center"
+  className:"flex-1 flex items-center"
 })``;
 
 const List = styled.ul.attrs({
@@ -53,7 +53,7 @@ const ListItem = styled.li.attrs({
   `;
 
 const Right = styled.div.attrs({
-  className:"w-1/2 flex"
+  className:"flex flex-1"
 })``
 
 function Work() {

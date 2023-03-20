@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import MapChart from './MapChart';
 
 const Section = styled.div.attrs({
   className:"h-screen snap-center"
 })``;
 
 const Container = styled.div.attrs({
-  className:"w-full flex justify-between gap-8"
+  className:"w-full flex justify-between h-full"
 })``;
 
 const Left = styled.div.attrs({
-  className:"w-1/2 flex items-center justify-center"
+  className:"flex-1"
 })``;
 
 const Title = styled.h2.attrs({
@@ -18,37 +19,45 @@ const Title = styled.h2.attrs({
 })``;
 
 const Form = styled.form.attrs({
-  className:"w-96 flex flex-col"
+  className:"w-96 flex flex-col gap-5"
 })``;
 
 const Input = styled.input.attrs({
-  className:""
+  className:"relative block w-full shadow-md rounded-md border-0 p-3 text-gray-900 placeholder:text-gray-400 sm:text-sm"
 })``;
 
 const TextArea = styled.textarea.attrs({
-  className:""
+  className:"relative block w-full shadow-md rounded-md border-0 p-3 text-gray-900 placeholder:text-gray-400 sm:text-sm h-64"
 })``;
 
 const Button = styled.button.attrs({
-  className:""
+  className:"p-2 bg-violet-800 text-white rounded-md shadow-md"
 })``;
 
 const Right = styled.div.attrs({
-  className:"w-1/2"
+  className:"flex-1 flex justify-end items-center pr-12"
 })``;
+
+const handleSubmit = e =>{
+  e.preventDefault();
+}
 
 function Contact() {
   return (
     <Section className='h-screen snap-center'>
       <Container>
         <Left>
-          <Form>
+          <MapChart/>
+        </Left>
+        <Right>
+        <Form onSubmit={handleSubmit}>
             <Title>Contact Me</Title>
             <Input placeholder="Name"/>
-            <Input placeholder='Email'/>
-            <TextArea placeholder='Write your message'/>
+            <Input placeholder='Email' type='email'/>
+            <TextArea placeholder='Write your message' rows={10}/>
+            <Button>Send</Button>
           </Form>
-        </Left>
+        </Right>
       </Container>
     </Section >
   )

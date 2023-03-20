@@ -28,7 +28,7 @@ const Icon = styled.img.attrs({
 })``;
 
 const Button = styled.button.attrs({
-  className:"w-10 w-max p-2 bg-teal-800 text-white rounded-md shadow-md"
+  className:"w-10 w-max p-2 bg-violet-800 text-white rounded-md shadow-md"
 })``;
 
 const List = styled.ul.attrs({

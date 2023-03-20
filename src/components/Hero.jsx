@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Navbar from './Navbar'
 
 const Section = styled.div.attrs({
-  className:'h-screen snap-center flex flex-col items-center'
+  className:'h-screen snap-center flex flex-col items-center w-10/12 mx-auto'
 })``;
 
 const Container = styled.div.attrs({
@@ -24,10 +24,10 @@ const WhatIDo = styled.div.attrs({
   className:'flex items-center'
 })``;
 const Subtitle = styled.h2.attrs({
-  className:'text-cyan-400 text-2xl'
+  className:'text-violet-800 text-2xl'
 })``;
 const Line = styled.div.attrs({
-  className:"rounded-full h-1 w-6 border-2 border-cyan-400 mr-2"
+  className:"rounded-full h-1 w-6 border-2 bg-violet-800 border-violet-800 mr-2"
 })``;
 
 const Image = styled.img.attrs({

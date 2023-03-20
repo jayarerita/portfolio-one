@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Container>
-      <div className="w-full md:w-10/12 mx-auto">
+      <div className="w-full">
       <Hero/>
       <Work/>
       <Contact/>

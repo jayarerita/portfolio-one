@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useRef, useState} from 'react'
 import styled from 'styled-components'
 import MapChart from './MapChart';
+import emailjs from '@emailjs/browser';
 
 const Section = styled.div.attrs({
   className:"h-screen snap-center"
@@ -35,14 +36,36 @@ const Button = styled.button.attrs({
 })``;
 
 const Right = styled.div.attrs({
-  className:"flex-1 flex justify-end items-center pr-12"
+  className:"flex-1 flex justify-center items-center pr-12"
 })``;
 
-const handleSubmit = e =>{
-  e.preventDefault();
-}
-
 function Contact() {
+  const form = useRef();
+  const [success, setSuccess] = useState(null);
+  const message = useRef();
+  const email = useRef();
+  const name = useRef();
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+  
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+    .then((result) => {
+        console.log(result.text);
+        // Clear the inputs
+        message.current.value = "";
+        email.current.value = "";
+        name.current.value = "";
+        setSuccess(true);
+    }, (error) => {
+        console.log(error.text);
+        setSuccess(false);
+    });
+  }
   return (
     <Section className='h-screen snap-center'>
       <Container>
@@ -50,12 +73,16 @@ function Contact() {
           <MapChart/>
         </Left>
         <Right>
-        <Form onSubmit={handleSubmit}>
+        <Form
+          onSubmit={handleSubmit}
+          ref={form}>
             <Title>Contact Me</Title>
-            <Input placeholder="Name"/>
-            <Input placeholder='Email' type='email'/>
-            <TextArea placeholder='Write your message' rows={10}/>
+            <Input placeholder="Name" name="name"/>
+            <Input placeholder='Email' type='email' name="email"/>
+            <TextArea placeholder='Write your message' rows={10} ref={message} name="message"/>
             <Button>Send</Button>
+            {success &&
+              "Thanks for reaching out! I'll be in touch soon!"}
           </Form>
         </Right>
       </Container>

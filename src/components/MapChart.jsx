@@ -35,11 +35,11 @@ const MapChart = () => {
         dy={100}
         connectorProps={{
           stroke: "#FFF",
-          strokeWidth: 4,
+          strokeWidth: 3,
           strokeLinecap: "round"
         }}
       >
-        <text x="220" y="10" textAnchor="end" alignmentBaseline="middle" fill="#fff" fontSize={40}>
+        <text x="200" y="10" textAnchor="end" alignmentBaseline="middle" fill="#fff" className="text-4xl">
           {"Doylestown"}
         </text>
       </Annotation>

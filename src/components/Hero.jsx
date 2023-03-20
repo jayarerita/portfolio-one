@@ -1,20 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import { Canvas } from '@react-three/fiber';
+import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 
 const Section = styled.div.attrs({
   className:'h-screen snap-center flex flex-col items-center w-10/12 mx-auto'
 })``;
 
 const Container = styled.div.attrs({
-  className:'h-screen flex justify-between items-center w-full'
+  className:'h-screen flex items-center w-full'
 })``;
 
 const Left = styled.div.attrs({
   className:'w-1/3 flex flex-col gap-5'
 })``;
 const Right = styled.div.attrs({
-  className:'w-2/3 relative'
+  className:'w-2/3 relative h-full overflow-visible'
 })``;
 
 const Title = styled.h1.attrs({
@@ -32,7 +34,7 @@ const Line = styled.div.attrs({
 
 const Image = styled.img.attrs({
   src:"./img/robot2.png",
-  className:"h-96 m-auto absolute object-contain top-0 bottom-0 left-0 right-0"
+  className:"h-96 m-auto absolute object-contain top-0 bottom-24 left-0 right-0"
 })`
   animation: animate 2s infinite ease alternate;
 
@@ -70,7 +72,19 @@ function Hero() {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          {/*3d model*/}
+          <Canvas>
+            <OrbitControls enableZoom={false}/>
+            <ambientLight intensity={1}/>
+            <directionalLight position={[3,2,1]}/>
+            <Sphere args={[1, 100, 100]} scale={2}>
+              <MeshDistortMaterial
+                color="#5b21b6"
+                attach="material"
+                distort={0.5}
+                speed={2}/>
+            </Sphere>
+            
+          </Canvas>
           <Image></Image>
         </Right>
       </Container>

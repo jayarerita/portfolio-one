@@ -72,7 +72,7 @@ function Work() {
         </Left>
         <Right>
           <Canvas camera={{fov:25, position:[5,5,5]}}>
-            <OrbitControls enableZooom={false} autoRotate={true}/>
+            <OrbitControls enableZoom={false} autoRotate={true}/>
             <ambientLight intensity={1}/>
             <directionalLight position={[3,2,1]}/>
             <Cube/>

@@ -1,5 +1,4 @@
 import { useTexture, Decal, useCursor} from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
 import React, { useRef, useState } from 'react'
 
 function Cube(props) {

@@ -1,16 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Canvas } from '@react-three/fiber';
-import Cube from './Cube';
-import { OrbitControls } from '@react-three/drei';
-
-const data = [
-  "Development",
-  "Engineering",
-  "Analysis",
-  "Design",
-  "Automation",
-];
+import work_sections from "../assets/work_sections.jsx"
 
 const Section = styled.div.attrs({
   className:"h-screen snap-center flex justify-center w-10/12 mx-auto"
@@ -60,31 +50,26 @@ const Right = styled.div.attrs({
 })``
 
 function Work() {
+  const [work, setWork] = useState(work_sections[0])
+  console.log(work);
+
   return (
     <Section>
       <Container>
         <Left>
           <List>
-            {data.map((item, idx)=> (
-              <ListItem key={item-idx} text={item}>{item}</ListItem>
+            {work_sections.map((item, idx)=> (
+              <ListItem
+                key={item-idx}
+                text={item.title}
+                onClick={()=>{setWork(item)}}>
+                  {item.title}
+              </ListItem>
             ))}
           </List>
         </Left>
         <Right>
-          {/*add grid and map languages*/}
-          <Canvas camera={{fov:25, position:[5,5,5]}}>
-            <OrbitControls enableZoom={false} autoRotate={true}/>
-            <ambientLight intensity={1}/>
-            <directionalLight position={[3,2,1]}/>
-            <Cube
-              decal_img="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
-              decal_y_scale={0.95}
-              decal_x_scale={0.95}
-              shape_color="#e6d24c"
-              shape_color_hover="#e6d24c"
-              />
-            
-          </Canvas>
+          {work.displayComponent}
         </Right>
       </Container>
     </Section>

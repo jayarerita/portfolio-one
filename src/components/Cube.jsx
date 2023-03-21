@@ -7,8 +7,6 @@ function Cube(props) {
   const [hovered, hover] = useState(false);
   useCursor(hovered);
 
-  //useFrame((state, delta) => (meshRef.current.rotation.x = meshRef.current.rotation.y += delta))
-
   return (
     <mesh
       {...props}

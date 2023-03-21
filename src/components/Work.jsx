@@ -46,12 +46,11 @@ const ListItem = styled.li.attrs({
   `;
 
 const Right = styled.div.attrs({
-  className:"flex flex-1"
+  className:"flex flex-1 h-max my-auto"
 })``
 
 function Work() {
   const [work, setWork] = useState(work_sections[0])
-  console.log(work);
 
   return (
     <Section>
@@ -60,7 +59,7 @@ function Work() {
           <List>
             {work_sections.map((item, idx)=> (
               <ListItem
-                key={item-idx}
+                key={item.title}
                 text={item.title}
                 onClick={()=>{setWork(item)}}>
                   {item.title}

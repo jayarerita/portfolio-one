@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
@@ -21,20 +21,20 @@ const Image = styled.img.attrs({
 `;
 
 function Automation() {
+
   return (
     <Container>
     <Canvas>
       <OrbitControls enableZoom={false}/>
       <ambientLight intensity={1}/>
       <directionalLight position={[3,2,1]}/>
-      <Sphere args={[.7, 100, 100]} scale={2}>
+      <Sphere args={[1.9, 100, 100]} scale={2}>
         <MeshDistortMaterial
           color="#5b21b6"
           attach="material"
           distort={0.5}
           speed={2}/>
       </Sphere>
-      
     </Canvas>
     <Image></Image>
     </Container>

@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
 import { Canvas } from '@react-three/fiber';
-import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
+import { Cylinder, MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
+import Pallet from "./Pallet"
 
 const Section = styled.div.attrs({
   className:'h-screen snap-center flex flex-col items-center w-10/12 mx-auto'
@@ -59,19 +60,24 @@ function Hero() {
       <Navbar/>
       <Container>
         <Left>
-          <Title>Make.</Title>
+          <Title>Connect.</Title>
           <Title>Collect.</Title>
           <Title>Analyze.</Title>
+          {/*
           <WhatIDo>
             <Line/>
             <Subtitle>What I do...</Subtitle>
-          </WhatIDo>
+          </WhatIDo>*/}
           <Explainer>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat aut, velit ipsum veritatis minima dolor omnis tempora expedita consequuntur tenetur maxime atque libero, molestiae natus culpa. Nam, cupiditate eum.
+            I help small manufactures to take full advantage 
+            of big data technologies to drive their businesses 
+            forward with bespoke automation solutions both in the 
+            cloud and on the production floor.
           </Explainer>
           <Button>Learn More</Button>
         </Left>
         <Right>
+          {/*
           <Canvas>
             <OrbitControls enableZoom={false}/>
             <ambientLight intensity={1}/>
@@ -83,9 +89,16 @@ function Hero() {
                 distort={0.5}
                 speed={2}/>
             </Sphere>
-            
           </Canvas>
-          <Image></Image>
+          */}
+          <Canvas>
+            <Cylinder scale={[0.9, 0.5, 0.9]}/>
+            <Pallet scale={.05}/>
+            <OrbitControls enableZoom={false} autoRotate={true}/>
+            <ambientLight intensity={1}/>
+            <directionalLight position={[3,2,1]}/>
+          </Canvas>
+          {/*<Image></Image>*/}
         </Right>
       </Container>
     </Section>

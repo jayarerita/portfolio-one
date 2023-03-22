@@ -33,7 +33,7 @@ const data = [
     },
     {
         src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-        title: "python",
+        title: "C++",
         x_scale: 0.8,
         y_scale: 0.8,
         shape_color:"#fff",
@@ -41,7 +41,7 @@ const data = [
     },
     {
         src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
-        title: "java script",
+        title: "Jquery",
         x_scale: 0.8,
         y_scale: 0.8,
         shape_color:"#e6d24c",

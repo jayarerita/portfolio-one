@@ -4,11 +4,11 @@ import Automation from "../components/Automation";
 const data = [
   {
     title: "Development",
-    displayComponent: <Development/>
+    displayComponent: <Automation/>
   },
   {
     title: "Automation",
-    displayComponent: <Automation/>,
+    displayComponent: <Development/>,
   },
   /*
   {

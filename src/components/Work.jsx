@@ -7,7 +7,7 @@ const Section = styled.div.attrs({
 })``;
 
 const Container = styled.div.attrs({
-  className:"flex justify-between object-contain w-full"
+  className:"flex justify-between object-contain w-full h-full"
 })``;
 
 const Left = styled.div.attrs({
@@ -46,7 +46,7 @@ const ListItem = styled.li.attrs({
   `;
 
 const Right = styled.div.attrs({
-  className:"flex flex-1 h-max my-auto"
+  className:"flex flex-1 items-center"
 })``
 
 function Work() {

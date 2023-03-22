@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 
 const Container = styled.div.attrs({
-  className:"relative w-full"
+  className:"relative w-full h-full"
 })``
 
 const Image = styled.img.attrs({
@@ -28,7 +28,7 @@ function Automation() {
       <OrbitControls enableZoom={false}/>
       <ambientLight intensity={1}/>
       <directionalLight position={[3,2,1]}/>
-      <Sphere args={[1.9, 100, 100]} scale={2}>
+      <Sphere args={[1.9, 100, 100]} scale={.7}>
         <MeshDistortMaterial
           color="#5b21b6"
           attach="material"

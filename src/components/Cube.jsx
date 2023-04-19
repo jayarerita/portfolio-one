@@ -16,14 +16,9 @@ function Cube(props) {
   })
 
   return (
-    <mesh
-      {...props}
-      ref={meshRef}
-      onPointerOver={() => hover(true)}
-      onPointerOut={() => hover(false)}>
-      <boxGeometry args={[.95]}/>
+    <mesh {...props} ref={meshRef} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
+      <boxGeometry args={[.99,.99,.99]}/>
       <meshStandardMaterial/>
-      {/*<meshStandardMaterial color={hovered ? props.shape_color_hover:props.shape_color}/>*/}
       <Decal position={[0,0,0]} rotation={[0,0,0]} scale={[props.decal_x_scale,props.decal_y_scale,2]} map={texture}/>
       <Decal position={[0,0,0]} rotation={[4.7,0,0]} scale={[props.decal_x_scale,props.decal_y_scale,2]} map={texture}/>
       <Decal position={[0,0,0]} rotation={[0,4.7,0]} scale={[props.decal_x_scale,props.decal_y_scale,2]} map={texture}/>

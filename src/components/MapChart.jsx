@@ -5,6 +5,7 @@ import {
   Geography,
   Annotation,
 } from "react-simple-maps";
+import colors from "../assets/colors";
 
 const MapChart = () => {
   return (
@@ -19,8 +20,8 @@ const MapChart = () => {
     >
       <Geographies
         geography="./states.json"
-        fill="#115e59"
-        stroke="#FFFFFF"
+        fill={colors.greenDark}
+        stroke={colors.greenLight}
         strokeWidth={0.8}
       >
         {({ geographies }) =>

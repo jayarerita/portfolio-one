@@ -28,11 +28,11 @@ const Icon = styled.img.attrs({
 })``;
 
 const Button = styled.button.attrs({
-  className:"w-10 w-max p-2 bg-violet-800 text-white rounded-md shadow-md"
+  className:"w-10 w-max p-2 text-white rounded-md shadow-md bg-greenDark"
 })``;
 
 const List = styled.ul.attrs({
-  className:"flex gap-5 align-middle list-none"
+  className:"hidden md:flex gap-5 align-middle list-none"
 })``;
 
 const ListItem = styled.li.attrs({
@@ -48,13 +48,17 @@ function Navbar() {
           <Logo/>
           <List>
             <ListItem>Home</ListItem>
-            <ListItem>Blog</ListItem>
-            <ListItem>Work</ListItem>
+            {/*<ListItem>Blog</ListItem>*/}
+            <ListItem>
+              <a href="#work-id">Work</a>
+            </ListItem>
           </List>
         </Links>
         <Icons>
-          <Icon/>
-          <Button>Hire Now</Button>
+          {/*<Icon/> Search not implemented yet*/}
+          <Button>
+            <a href="#contact-id">Contact Me</a>
+          </Button>
         </Icons>
         
       </Container>

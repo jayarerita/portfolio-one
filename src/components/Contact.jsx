@@ -8,11 +8,11 @@ const Section = styled.div.attrs({
 })``;
 
 const Container = styled.div.attrs({
-  className:"w-full flex justify-between h-full"
+  className:"w-full flex md:justify-between h-full"
 })``;
 
 const Left = styled.div.attrs({
-  className:"flex-1"
+  className:"flex-1 hidden md:flex"
 })``;
 
 const Title = styled.h2.attrs({
@@ -20,7 +20,7 @@ const Title = styled.h2.attrs({
 })``;
 
 const Form = styled.form.attrs({
-  className:"w-96 flex flex-col gap-5"
+  className:"w-full md:w-96 flex flex-col gap-5"
 })``;
 
 const Input = styled.input.attrs({
@@ -32,11 +32,11 @@ const TextArea = styled.textarea.attrs({
 })``;
 
 const Button = styled.button.attrs({
-  className:"p-2 bg-violet-800 text-white rounded-md shadow-md"
+  className:"p-2 bg-greenLight text-black rounded-md shadow-md"
 })``;
 
 const Right = styled.div.attrs({
-  className:"flex-1 flex justify-center items-center pr-12"
+  className:"flex-1 flex justify-center items-center px-8 md:pr-12"
 })``;
 
 function Contact() {
@@ -67,7 +67,7 @@ function Contact() {
     });
   }
   return (
-    <Section className='h-screen snap-center'>
+    <Section className='h-screen snap-center' id="contact-id">
       <Container>
         <Left>
           <MapChart/>

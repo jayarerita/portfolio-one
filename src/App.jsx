@@ -5,7 +5,7 @@ import './index.css'
 import styled from 'styled-components'
 
 const Container = styled.div.attrs({
-  className:'w-full h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth bg-gradient-to-r from-green-800 to-teal-600 text-white'
+  className:'w-screen h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth bg-gradient-to-r from-[#1C1C1C] to-[#494949] text-white'
 })`
   scrollbar-width: none;
   &::-webkit-scrollbar{

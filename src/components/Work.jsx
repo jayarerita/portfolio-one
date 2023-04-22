@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import work_sections from "../assets/work_sections.jsx"
+import ScrollIcon from './ScrollIcon.jsx';
 
 const Section = styled.div.attrs({
   className:"h-screen snap-center flex justify-center px-4 md:w-10/12 mx-auto"
@@ -55,14 +56,14 @@ const ItemHeading = styled.div.attrs({
   })``;
 
 const Right = styled.div.attrs({
-  className:"flex flex-1 items-bottom pb-8 md:p-0 md:items-center"
+  className:"flex flex-1 items-bottom pb-8 md:p-0 md:items-center relative"
 })``
 
 function Work() {
   const [work, setWork] = useState(work_sections[0])
 
   return (
-    <Section id="work-id">
+    <Section id="skils-id">
       <Container>
         <Left>
           <List>
@@ -86,6 +87,9 @@ function Work() {
         </Left>
         <Right>
           {work.displayComponent}
+          <div className="absolute bottom-8 -translate-x-1/2 left-1/2">
+          <ScrollIcon href="#contact-id"/>
+          </div>
         </Right>
       </Container>
     </Section>

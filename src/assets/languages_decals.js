@@ -55,6 +55,14 @@ const data = [
         shape_color:"#fff",
         shape_color_hover:"#5b21b6",
     },
+    {
+        src: "./img/Tailwind_CSS_Logo.png",
+        title: "Tailwind CSS",
+        x_scale: 0.6,
+        y_scale: 0.6,
+        shape_color:"#fff",
+        shape_color_hover:"#5b21b6",
+    },
     
 ];
 

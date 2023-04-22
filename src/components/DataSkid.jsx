@@ -1,5 +1,5 @@
-import React, {useRef, useEffect} from 'react';
-import { Cylinder } from '@react-three/drei';
+import React, {useRef, useEffect, useState} from 'react';
+import { Cylinder, Text } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import Pallet from './Pallet';
 import colors from '../assets/colors';
@@ -9,6 +9,19 @@ function DataSkid() {
     const cylinderMiddleRef = useRef(null);
     const cylinderTopRef = useRef(null);
     const palletRef = useRef(null);
+    const [scale, setScale] = useState(1);
+    const [position, setPosition] = useState([0,-1,0]);
+  
+  useEffect(() => {
+    // Detect the screen size and set the mesh scale accordingly
+    if (window.innerWidth < 768){
+      setScale(1);
+      setPosition([0,-1,0]);
+    }else if (window.innerWidth < 1024){
+      setScale(1);
+      setPosition([0,-1,0]);
+    }
+  }, [window.innerWidth])
   
     /*
     useEffect(()=>{
@@ -40,7 +53,7 @@ function DataSkid() {
     })
 
   return (
-    <mesh position={[0,-1,0]} rotation={[0,Math.PI/4,0]}>
+    <mesh position={position} rotation={[0,Math.PI/4,0]} scale={scale}>
         <Cylinder scale={[0.9, 0.5, 0.9]} ref={cylinderTopRef} position={[0,2,0]}>
             <meshStandardMaterial color={colors.greyDark} roughness={0.7} metalness={2}/>
         </Cylinder>
@@ -51,6 +64,24 @@ function DataSkid() {
             <meshStandardMaterial color={colors.greyDark} roughness={0.7} metalness={2}/>
         </Cylinder>
         <Pallet meshRef={palletRef} scale={.2} position={[-0.7,.12,0]} rotation={[0,0,0]}/>
+        <Text
+          color="white" 
+          fontSize={0.2}
+          maxWidth={2.5}
+          lineHeight={1}
+          letterSpacing={-0.02}
+          textAlign="center"
+          anchorX="center"
+          anchorY="middle"
+          fillOpacity={1}
+          strokeWidth={'2.5%'}
+          strokeColor="#ffffff"
+          position={[0,-0.7,0]}
+          rotation={[0,-Math.PI/4,0]}
+        >
+        Start considering the value of product beyond its price.
+        Actionable information is produced at every stage of production.
+        </Text>
     </mesh>
   )
 }

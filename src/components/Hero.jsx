@@ -19,7 +19,7 @@ const Left = styled.div.attrs({
   className:'px-8 md:px-0 md:w-1/3 flex flex-col gap-5 items-center md:items-left'
 })``;
 const Right = styled.div.attrs({
-  className:'w-screen md:w-2/3 relative h-full overflow-visible'
+  className:'w-screen md:w-2/3 relative h-screen md:h-full overflow-visible'
 })``;
 
 const Title = styled.h1.attrs({
@@ -56,25 +56,18 @@ function Hero() {
           <ScrollIcon href="#data-skid-id"/>
         </Left>
         <Right id="data-skid-id">
-          <Suspense fallback={<Loading/>}>
+          <Suspense fallback={null}>
             <Canvas>
               <DataSkid/>
-              <Billboard position={[-1,-2,-0.2]}>
-                <Text color="white" fontSize={0.15} maxWidth={2} lineHeight={1} letterSpacing={-0.02} textAlign="center" anchorX="center" anchorY="middle">
-                Start considering the value of product beyond its price.
-                </Text>
-              </Billboard>
-              <Billboard position={[1,2,0.2]}>
-                <Text color="white" fontSize={0.15} maxWidth={2} lineHeight={1} letterSpacing={-0.02} textAlign="center" anchorX="center" anchorY="middle">
-                Actionable information is produced at every stage of production.
-                </Text>
-              </Billboard>
               <OrbitControls enableZoom={false} autoRotate={true}/>
               <ambientLight intensity={1.1}/>
               <directionalLight position={[3,2,1]}/>
               <directionalLight position={[3,-2,1]}/>
             </Canvas>  
           </Suspense>
+          <div className={"absolute bottom-8 left-1/2 -translate-x-1/2 "}>
+          <ScrollIcon href="#skils-id"/>
+          </div>
         </Right>
       </Container>
     </Section>

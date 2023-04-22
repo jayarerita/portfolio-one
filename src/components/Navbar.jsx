@@ -28,7 +28,7 @@ const Icon = styled.img.attrs({
 })``;
 
 const Button = styled.button.attrs({
-  className:"w-10 w-max p-2 text-white rounded-md shadow-md bg-greenDark"
+  className:"w-10 w-max p-2 text-white rounded-md shadow-md bg-greenMedium"
 })``;
 
 const List = styled.ul.attrs({
@@ -48,9 +48,13 @@ function Navbar() {
           <Logo/>
           <List>
             <ListItem>Home</ListItem>
-            {/*<ListItem>Blog</ListItem>*/}
+            {/*<ListItem>Blog</ListItem>
             <ListItem>
               <a href="#work-id">Work</a>
+            </ListItem>
+  */}
+            <ListItem>
+              <a href="#skils-id">Skills</a>
             </ListItem>
           </List>
         </Links>

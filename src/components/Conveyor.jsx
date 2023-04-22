@@ -68,7 +68,7 @@ useEffect(() => {
     if (state.clock.elapsedTime % 6 < 3){
       lampRef.current.color = new THREE.Color(colors.greenLight);
     }else{
-      lampRef.current.color = new THREE.Color(colors.greenDark);
+      lampRef.current.color = new THREE.Color(colors.greenMedium);
     }
   })
   return (
@@ -82,13 +82,13 @@ useEffect(() => {
         color={colors.greyDark}
       />
       <Box args={[0.8,0.8,0.8]} position={[0,.7,0]} ref={boxRef1}>
-        <meshStandardMaterial color={colors.greenDark}/>
+        <meshStandardMaterial color={colors.greenMedium}/>
       </Box>
       <Box args={[0.8,0.8,0.8]} position={[1,.7,0]} ref={boxRef2}>
-        <meshStandardMaterial color={colors.greenDark}/>
+        <meshStandardMaterial color={colors.greenMedium}/>
       </Box>
       <Box args={[0.8,0.8,0.8]} position={[2,.7,0]} ref={boxRef3}>
-        <meshStandardMaterial color={colors.greenDark}/>
+        <meshStandardMaterial color={colors.greenMedium}/>
       </Box>
       <RoundedBox args={[1.2,1.5,1.2]} position={[0,.7,0]}>
         <meshStandardMaterial color={colors.greyMedium}/>

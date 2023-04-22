@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'greenDark': "#115e59",
-        //'greenLight': "#5BFFDA",
+        'greenDark': "#1b4c41",
+        'greenMedium': '#246657',
         'greenLight': "#28ffce",
         'blueDark': "#141E30",
         'blueMedium': "#243B55",
